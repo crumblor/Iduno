@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS blog_ipb23;
 CREATE DATABASE blog_ipb23;
 
 USE blog_ipb23;
@@ -7,8 +8,6 @@ CREATE TABLE posts (
 	content VARCHAR(5200)
 );
 
-SELECT * FROM posts;
-
 INSERT  INTO  posts
 (content)
 VALUES
@@ -17,3 +16,4 @@ VALUES
 ("Leons nozaga siko");
 
 SELECT * FROM posts;
+

@@ -2,45 +2,38 @@
 
 echo "<style>
 body {
-    /*display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;*/
+    text-align: left;
     color: white;
     background: linear-gradient(to bottom, black, #510080);
-    font-size: 22px;
+    font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
 }
-
-h1 {
-    color: #DB3FD1;
+li {
+    background: linear-gradient(to bottom, #ff4fe7, #f433ff);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
     transition: color 0.3s ease, transform 0.3s ease;
 }
-
-h1:hover {
-    color: #EE0000;
-    transform: scale(1.1);
+li:hover {
+    color: #e000c2;
+    transform: scale(1.01);
 }
-
-
 </style>";
 
-$dsn = "mysql:host=localhost;port=3306;user=root;password=root;dbname=blog_ipb23;charset=utf8mb4";
+require "functions.php";
+require "Database.php";
 
-$pdo = new PDO($dsn);
+$db = new Database();
+$posts = $db->query("SELECT * FROM posts");
 
-$statement = $pdo->prepare("SELECT * FROM posts");
+//dd($posts[0]["content"]);
 
-$statement->execute();
-
-$posts = $statement->fetchAll();
-
-function dd($data) {
-    echo "<pre>";
-    var_dump($data);
-    echo "</pre>";
-    die();
+echo "<ul>";
+foreach($posts as $post) {
+    echo "<li>" . $post["content"] . "</li>";
 }
-
-dd($posts);
+echo "</ul>";
