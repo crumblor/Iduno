@@ -1,39 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
 <?php
+    require "functions.php";
+    require "Database.php";
+    $config = require("config.php");
 
-echo "<style>
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    color: white;
-    background: linear-gradient(to bottom, black, #510080);
-    font-size: 25px;
-    font-family: 'Courier New', Courier, monospace;
-}
-li {
-    background: linear-gradient(to bottom, #ff4fe7, #f433ff);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-li:hover {
-    color: #e000c2;
-    transform: scale(1.01);
-}
-</style>";
+    $db = new Database($config["database"]);
 
-require "functions.php";
-require "Database.php";
+    $posts = $db->query("SELECT * FROM posts")->fetchAll();
 
-$db = new Database();
-$posts = $db->query("SELECT * FROM posts");
-
-//dd($posts[0]["content"]);
-
-echo "<ul>";
-foreach($posts as $post) {
-    echo "<li>" . $post["content"] . "</li>";
-}
-echo "</ul>";
+    echo "<ul>";
+    foreach($posts as $post) {
+        echo "<li>" . $post["content"] . "</li>";
+    }
+    echo "</ul>";
+?>
+</body>
+</html>

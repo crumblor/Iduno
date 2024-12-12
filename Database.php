@@ -1,14 +1,17 @@
 <?php
 
 class Database {
-    public function query($sql) {
-        $dsn = "mysql:host=localhost;port=3306;user=root;password=root;dbname=blog_ipb23;charset=utf8mb4";
-        $pdo = new PDO($dsn);
+    public $pdo;
 
-        $statement = $pdo->prepare($sql);
+    public function __construct($config) {
+        $dsn = "mysql:" . http_build_query($config, "", ";");
+        $this->pdo = new PDO($dsn);
+        $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    }
+
+    public function query($sql) {
+        $statement = $this->pdo->prepare($sql);
         $statement->execute();
-        
-        $data = $statement->fetchAll(PDO::FETCH_ASSOC);
-        return $data;
+        return $statement;
     }
 }
