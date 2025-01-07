@@ -15,11 +15,15 @@
 
     $db = new Database($config["database"]);
 
-    $posts = $db->query("SELECT * FROM posts")->fetchAll();
-
+    $select = "SELECT * FROM  posts";
+    $params = [];
     if(isset($_GET["search_query"]) && ($_GET["search_query"]) !== "") {
-        $posts = $db->query("SELECT * FROM  posts WHERE content LIKE  '%" . $_GET["search_query"]. "%'")->fetchAll();
+        $search_query = "%" . $_GET["search_query"] . "%";
+        $select .= " WHERE content LIKE :nam";
+        $params = ["nam" => $search_query];
     }
+        $posts = $db->query($select, $params)->fetchAll();
+
 
     echo "<h1>Blooooogs</h1>";
 
@@ -27,6 +31,10 @@
         echo '<input name="search_query"/>';
         echo '<button>🔍🔎</button>';
     echo "</form>";
+
+ if (count($posts) == 0) {
+    echo "<h3>" . $_GET["search_query"] . " aint a real ting!<h3>";
+ }
 
     echo "<ul>";
     foreach($posts as $post) {
