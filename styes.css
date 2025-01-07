@@ -4,15 +4,26 @@ body {
     align-items: center;
     justify-content: center;
     text-align: left;
-    color: #ffd700;
+    color: #ff6bcb;
     background: black;
     font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
 }
+
 li {
     transition: color 0.2s ease, transform 0.2s ease;
 }
+
 li:hover {
-    color: darkred;
+    color: #ffd700;
     transform: scale(1.01);
+}
+
+h1 {
+    color: red;
+}
+
+button {
+    background-color: lightblue;
+    border-radius: 5px;
 }
