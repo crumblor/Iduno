@@ -47,3 +47,7 @@ form {
     align-items: center;
     justify-content: center;
 }
+
+ul {
+    padding: 0;
+}
