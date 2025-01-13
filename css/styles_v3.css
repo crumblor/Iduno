@@ -1,4 +1,6 @@
 body {
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,4 +52,24 @@ form {
 
 ul {
     padding: 0;
+}
+
+header {
+    border-bottom: white 2px solid;
+    width: 100%;
+}
+header ul {
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+}
+
+header ul li {
+    padding: 7px 15px;
+}
+
+a {
+    text-decoration: none;
+    color: lightskyblue;
 }
