@@ -1,8 +1,8 @@
 <header>
     <nav>
         <ul>
-            <li><a href="/">Visi blogi</a></li>
-            <li><a href="about">Par mums</a></li>
+            <li><a class="nav" href="/">Visi blogi</a></li>
+            <li><a class="nav" href="about">Par mums</a></li>
         </ul>
     </nav>
 </header>

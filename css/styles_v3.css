@@ -69,7 +69,12 @@ header ul li {
     padding: 7px 15px;
 }
 
-a {
+.nav {
     text-decoration: none;
     color: lightskyblue;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }

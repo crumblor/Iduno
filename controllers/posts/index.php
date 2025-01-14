@@ -9,4 +9,4 @@
     }
         $posts = $db->query($select, $params)->fetchAll();
 
-    require "views/index.view.php";
+    require "views/posts/index.view.php";
