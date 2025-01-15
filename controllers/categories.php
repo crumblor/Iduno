@@ -1,6 +1,4 @@
 <?php
-    echo '<link rel="stylesheet" href="css/styles_v1.css">';
-
     $select = "SELECT * FROM categories";
     $params = [];
    if(isset($_GET["search_query"]) && ($_GET["search_query"]) !== "") {
