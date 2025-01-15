@@ -7,10 +7,10 @@
 <form method="POST">
     <label for="content">Kas sodien galvã?</label>
     <input name="content" id="content" value="<?= $_POST['content'] ?? ""?>"/>
-    <?php if(isset($errors["content"])) { ?>
-       <p><?= $errors["content"] ?></p>
-    <?php } ?>
     <button>Post!</button>
 </form>
+<?php if(isset($errors["content"])) { ?>
+       <p><?= $errors["content"] ?></p>
+    <?php } ?>
 <?php require "views/components/footer.php";?>
     
