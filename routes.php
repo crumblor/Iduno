@@ -6,5 +6,6 @@ return [
     "/about" => "controllers/story.php",
     "/create" => "controllers/posts/create.php",
     "/edit" => "controllers/posts/edit.php",
-    "/categories" => "controllers/categories.php",
+    "/delete" => "controllers/posts/delete.php",
+    "/categories" => "controllers/categories.php"
 ];

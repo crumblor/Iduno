@@ -1,4 +1,4 @@
-<?php $title = "Create";?>
+<?php $title = "Edit";?>
 <?php $css = "css/styles_v3.css";?>
 <?php require "views/components/header.php";?>
 <?php require "views/components/navbar.php";?>
