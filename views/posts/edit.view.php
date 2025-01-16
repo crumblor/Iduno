@@ -2,12 +2,13 @@
 <?php $css = "css/styles_v3.css";?>
 <?php require "views/components/header.php";?>
 <?php require "views/components/navbar.php";?>
-<h1>Izveidot bloga ierakstu!</h1>
+<h1>Editooo!</h1>
 
 <form method="POST">
-    <label for="content">Wats up?</label>
-    <input name="content" id="content" value="<?= $_POST['content'] ?? ""?>"/>
-    <button>Post!</button>
+    <label for="content">Kļūda?</label>
+    <input name="content" id="content" value="<?= $post["content"] ?? ""?>"/>
+    <input name="id" value="<?= $post["id"]?>" type="hidden">
+    <button>Confirm!</button>
 </form>
 <?php if(isset($errors["content"])) { ?>
        <p><?= $errors["content"] ?></p>
