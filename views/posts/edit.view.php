@@ -1,14 +1,14 @@
 <?php $title = "Edit";?>
-<?php $css = "css/styles_v3.css";?>
 <?php require "views/components/header.php";?>
 <?php require "views/components/navbar.php";?>
-<h1>Editooo!</h1>
+<h1>Edito "<?= $post["content"]?>"</h1>
 
 <form method="POST">
-    <label for="content">Kļūda?</label>
     <input name="content" id="content" value="<?= $post["content"] ?? ""?>"/>
     <input name="id" value="<?= $post["id"]?>" type="hidden">
-    <button>Confirm!</button>
+    <button>
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="30"  height="30"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-edit"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" /><path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" /><path d="M16 5l3 3" /></svg>
+    </button>
 </form>
 <?php if(isset($errors["content"])) { ?>
        <p><?= $errors["content"] ?></p>

@@ -1,5 +1,4 @@
 <?php $title = "Blogs";?>
-<?php $css = "css/styles_v3.css";?>
 <?php require "components/header.php";?>
 <?php require "components/navbar.php";?>
     <h1>Kategorijaaaaaas</h1>

@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    color: #ff6bcb;
+    background: linear-gradient(to bottom right, #212121, black);
+    height: 100%;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+html {
+    height: 100%;
+}
+
+li {
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+li:hover {
+    color: #ffd700;
+    transform: scale(1.01);
+}
+
+h1 {
+    color: lightgreen;
+}
+
+button {
+    background: none;
+    border: none;
+    transition: transform 0.1s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+button:hover svg {
+    animation: wiggle 0.8s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(-3.5deg);
+    } 
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(-5deg);
+    }
+
+    75% {
+        transform: rotate(3.5deg);
+    }
+}
+
+input {
+    background: none;
+    border: none;
+    border-bottom: 2px rgba(52, 52, 52, 0.812) solid;
+    width: 100%;
+    color: white;
+    width: 200px;
+    transition: border-color 0.05s ease-in-out, font-weight ease-in-out;
+}
+
+input:focus {
+    outline: none;
+    font-weight: 600;
+    border-color: aquamarine;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul {
+    padding-left: 10px;
+}
+
+header {
+    border-bottom: white 2px solid;
+    width: 100%;
+    background-color: #0000004d;
+}
+header ul {
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+}
+
+header ul li {
+    padding: 7px 15px;
+}
+
+.nav {
+    text-decoration: none;
+    color: lightskyblue;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+svg {
+    color: white;
+}
+
+.show-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.show-buttons a, .show-buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: hotpink;
+    padding: 5px 10px;
+    transition: transform 0.1s ease-in-out;
+    border: 2px lightblue solid;
+    border-radius: 3px;
+}
+
+.show-buttons a:hover, .show-buttons button:hover {
+    transform: scale(1.1);
+}
+
+.show-buttons a:hover svg, .show-buttons button:hover svg {
+    animation: wiggle 0.8s ease-in-out infinite;
+}
