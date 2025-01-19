@@ -6,7 +6,7 @@ body {
     align-items: center;
     text-align: left;
     color: #ff6bcb;
-    background: linear-gradient(to bottom right, #212121, black);
+    background: black;
     height: 100%;
     font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
@@ -90,7 +90,6 @@ ul {
 header {
     border-bottom: white 2px solid;
     width: 100%;
-    background-color: #0000004d;
 }
 header ul {
     margin: 0;
@@ -144,4 +143,8 @@ svg {
 
 .show-buttons a:hover svg, .show-buttons button:hover svg {
     animation: wiggle 0.8s ease-in-out infinite;
+}
+
+.confirm-box {
+    display: none;
 }
