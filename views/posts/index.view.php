@@ -1,4 +1,5 @@
 <?php $title = "Blogs";?>
+<?php $style = "css/all.css";?>
 <?php require "views/components/header.php";?>
 <?php require "views/components/navbar.php";?>
     <h1>Blogs</h1>
@@ -11,7 +12,7 @@
     </form>
 
     <?php if(count($posts) == 0) { ?>
-    <h3>That aint a real thing!</h3>
+    <h3>Nav ierakstu!</h3>
     <?php } ?>
 
     <ul>

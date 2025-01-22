@@ -1,4 +1,5 @@
 <?php $title = "Create";?>
+<?php $style = "css/create.css";?>
 <?php require "views/components/header.php";?>
 <?php require "views/components/navbar.php";?>
 <h1>Izveidot bloga ierakstu!</h1>

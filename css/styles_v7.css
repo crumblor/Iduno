@@ -6,7 +6,7 @@ body {
     align-items: center;
     text-align: left;
     color: #ff6bcb;
-    background: black;
+    background-color: black;
     height: 100%;
     font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
@@ -14,7 +14,7 @@ body {
 
 html {
     height: 100%;
-}
+}   
 
 li {
     transition: color 0.2s ease, transform 0.2s ease;
@@ -90,6 +90,7 @@ ul {
 header {
     border-bottom: white 2px solid;
     width: 100%;
+    background-color: black;
 }
 header ul {
     margin: 0;
@@ -145,6 +146,9 @@ svg {
     animation: wiggle 0.8s ease-in-out infinite;
 }
 
-.confirm-box {
-    display: none;
+#notif {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 25%;
 }
