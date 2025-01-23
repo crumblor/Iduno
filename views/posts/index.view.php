@@ -6,7 +6,7 @@
 
     <form>
         <input name="search_query" placeholder="Search" value="<?= $_GET['search_query'] ?? ""?>"/>
-        <button>
+        <button class="">
         <svg  xmlns="http://www.w3.org/2000/svg"  width="30"  height="30"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
         </button>
     </form>
@@ -20,5 +20,9 @@
         <li><a href="show?id=<?= $post["id"]?>"> <?= htmlspecialchars($post["content"]) ?></a></li>
     <?php } ?>
     </ul>
+
+    <?php if(isset($_SESSION["flash"])) {?>
+        <p style="animation: slide 2s ease-in-out forwards;" class="flash"><?= $_SESSION["flash"]?></p>
+    <?php unset($_SESSION["flash"]); }?>
 <?php require "views/components/footer.php";?>
     

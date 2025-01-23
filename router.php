@@ -1,4 +1,6 @@
 <?php
+$config = require("config.php");
+$db = new Database($config["database"]);
 $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
 $routes = require("routes.php");
 

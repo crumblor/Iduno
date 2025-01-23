@@ -8,5 +8,7 @@ return [
         "password" => "root",
         "dbname" => "blog_ipb23",
         "charset" => "utf8mb4",
-    ]
+    ],
+
+    "domain" => "http://localhost"
 ];

@@ -1,11 +1,10 @@
 <?php  
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $sql = 'DELETE FROM posts
+    $sql = 'DELETE FROM categories
     WHERE id = :id';
     $params = ["id" => $_POST["id"]];
     $post = $db->query($sql, $params)->fetch();
-    $_SESSION["flash"] = "Ieraksts izdzests!";
     header('Location: /'); 
     exit();
 } else {

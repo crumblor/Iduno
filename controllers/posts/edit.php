@@ -20,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         WHERE id = :id';
         $params = ["content" => $_POST["content"], "id" => $_POST["id"]];
         $post = $db->query($sql, $params)->fetch();
-        $_SESSION["success"] = "Posts editots veiksmigi!";
+        $_SESSION["flash"] = "Ieraksts editots!";
         header('Location: /show?id=' . $_POST["id"]); 
         exit();
     }

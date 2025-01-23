@@ -152,3 +152,34 @@ svg {
     top: 50%;
     left: 25%;
 }
+
+.flash {
+    position: fixed;
+    right: 0;
+    top: 6%;
+    border: solid rgba(173, 255, 182, 0.591) 4px;
+    padding: 12px 30px;
+    overflow: hidden;
+    width: 20%;
+    border-right: none;
+    background-color: #121212;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    text-wrap: nowrap;
+    color: rgb(139, 255, 139);
+}
+
+@keyframes slide {
+    0% {
+      width: 0px;
+      opacity: 1;
+    }
+    25%, 75% {
+      width: 20%;
+      opacity: 1;
+    }
+    100% {
+      width: 0px;
+      opacity: 0;
+    }
+  }
