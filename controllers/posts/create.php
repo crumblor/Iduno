@@ -15,6 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         (:content)';
         $params = ["content" => $_POST["content"]];
         $post = $db->query($sql, $params)->fetch();
+        $_SESSION["create"] = "Ieraksts izveidots!";
         header("Location: /"); 
         exit();
     }

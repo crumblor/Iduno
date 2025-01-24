@@ -46,7 +46,7 @@ button:hover svg {
 @keyframes wiggle {
     0%, 100% {
         transform: rotate(-3.5deg);
-    } 
+    }
 
     25% {
         transform: rotate(5deg);
@@ -157,25 +157,46 @@ svg {
     position: fixed;
     right: 0;
     top: 6%;
-    border: solid rgba(173, 255, 182, 0.591) 4px;
     padding: 12px 30px;
     overflow: hidden;
-    width: 20%;
-    border-right: none;
     background-color: #121212;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     text-wrap: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.flash svg {
+    color: inherit;
+    padding-left: 2%;
+}
+
+#error {
+    color: rgb(255, 139, 139);
+    border: solid rgba(255, 152, 152, 0.591) 4px;
+    border-right: none;
+}
+
+#success {
     color: rgb(139, 255, 139);
+    border: solid rgba(173, 255, 182, 0.591) 4px;
+    border-right: none;
+}
+
+#warning {
+    color: rgb(253, 255, 139);
+    border: solid rgba(252, 255, 173, 0.591) 4px;
+    border-right: none;
 }
 
 @keyframes slide {
     0% {
       width: 0px;
-      opacity: 1;
+      opacity: 0;
     }
-    25%, 75% {
-      width: 20%;
+    20%, 80% {
+      width: 22%;
       opacity: 1;
     }
     100% {
