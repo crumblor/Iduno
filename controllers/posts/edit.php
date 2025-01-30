@@ -7,7 +7,10 @@ $params = [];
 $categories = $db->query($select, $params)->fetchAll();
 
 if(isset($_GET["id"])) {
-    $sql = "SELECT * FROM posts WHERE id = :id";
+    $sql = "SELECT posts.*, categories.category_name FROM posts
+            LEFT JOIN categories
+            ON posts.category_id = categories.id
+            WHERE posts.id = :id;";
     $params = ["id" => $_GET["id"]];
     $post = $db->query($sql, $params)->fetch();
 }

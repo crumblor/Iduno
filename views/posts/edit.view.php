@@ -7,7 +7,7 @@
     <input name="content" id="content" value="<?= $post["content"] ?? ""?>"/>
     <select name="category_id">
         <?php foreach($categories as $categorie) { ?>
-            <option value="<?= $categorie["id"]?>"><?= $categorie["category_name"]?></option>
+            <option <?php if($categorie["id"] == $post["category_id"]){echo "selected";}?> value="<?= $categorie["id"]?>"><?= $categorie["category_name"]?></option>
         <?php } ?>
     </select>
     <input name="id" value="<?= $post["id"]?>" type="hidden">
