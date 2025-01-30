@@ -7,12 +7,13 @@ $params = [];
 $categories = $db->query($select, $params)->fetchAll();
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $category_id = $_POST["category_id"] ?? null;
     $errors = [];
     if(!Validator::string($_POST["content"], max: 50)) {
         $errors["content"] = "Saturam jābūt ievadītam, bet ne garākam par 50 rakstzīmēm";
         $_SESSION["flash"] = "Ieraksts nederigs!";
     }
-    if(!Validator::number($_POST["category_id"])) {
+    if($category_id !== null && !Validator::number($category_id)) {
         $errors["content"] = "Kautkas tev nav ar category_id";
         $_SESSION["flash"] = "Ieraksts nederigs!";
     }
@@ -22,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         (content, category_id)
         VALUES
         (:content, :category_id)';
-        $params = ["content" => $_POST["content"], "category_id" => $_POST["category_id"]];
+        $params = ["content" => $_POST["content"], "category_id" => $category_id];
         $post = $db->query($sql, $params)->fetch();
         $_SESSION["create"] = "Ieraksts izveidots!";
         header("Location: /"); 
