@@ -5,7 +5,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     WHERE id = :id';
     $params = ["id" => $_POST["id"]];
     $post = $db->query($sql, $params)->fetch();
-    header('Location: /'); 
+    header('Location: /categories/index'); 
     exit();
 } else {
     redirectIfNotFound();
