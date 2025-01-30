@@ -1,4 +1,4 @@
-<?php $style = "css/catcreate.css";?>
+<?php $style = "css/createcat.css";?>
 <?php $title = "Create";?>
 <?php require "views/components/header.php";?>
 <?php require "views/components/navbar.php";?>

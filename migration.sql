@@ -1,8 +1,8 @@
-USE blog_ipb23;
-
-DROP DATABASE blog_ipb23;
+DROP DATABASE IF EXISTS blog_ipb23;
 
 CREATE DATABASE blog_ipb23;
+
+USE blog_ipb23;
 
 CREATE TABLE posts (
     id INT PRIMARY KEY AUTO_INCREMENT,
