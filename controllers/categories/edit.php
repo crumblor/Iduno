@@ -20,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         WHERE id = :id';
         $params = ["category_name" => $_POST["category_name"], "id" => $_POST["id"]];
         $post = $db->query($sql, $params)->fetch();
-        header('Location: /show?id=' . $_POST["id"]); 
+        header('Location: show?id=' . $_POST["id"]); 
         exit();
     }
 }

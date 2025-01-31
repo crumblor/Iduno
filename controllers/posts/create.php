@@ -7,12 +7,13 @@ $params = [];
 $categories = $db->query($select, $params)->fetchAll();
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $category_id = $_POST["category_id"] ?? null;
+    $category_id = ($_POST["category_id"] === "") ? null : $_POST["category_id"];
     $errors = [];
     if(!Validator::string($_POST["content"], max: 50)) {
         $errors["content"] = "Saturam jābūt ievadītam, bet ne garākam par 50 rakstzīmēm";
         $_SESSION["flash"] = "Ieraksts nederigs!";
     }
+
     if($category_id !== null && !Validator::number($category_id)) {
         $errors["content"] = "Kautkas tev nav ar category_id";
         $_SESSION["flash"] = "Ieraksts nederigs!";

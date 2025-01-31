@@ -9,7 +9,7 @@ return [
 
     "/about" => "controllers/story.php",
 
-    "/categories/index" => "controllers/categories/index.php",
+    "/categories" => "controllers/categories/index.php",
     "/categories/show" => "controllers/categories/show.php",
     "/categories/create" => "controllers/categories/create.php",
     "/categories/edit" => "controllers/categories/edit.php",

@@ -2,10 +2,10 @@
 <?php require "views/components/header.php";?>
 <?php require "views/components/navbar.php";?>
 <h1>Edito "<?= $post["content"]?>"</h1>
-
 <form method="POST">
     <input name="content" id="content" value="<?= $post["content"] ?? ""?>"/>
     <select name="category_id">
+        <option value="">Bez kategorijas</option>
         <?php foreach($categories as $categorie) { ?>
             <option <?php if($categorie["id"] == $post["category_id"]){echo "selected";}?> value="<?= $categorie["id"]?>"><?= $categorie["category_name"]?></option>
         <?php } ?>

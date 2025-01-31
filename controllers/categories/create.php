@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         (:category_name)';
         $params = ["category_name" => $_POST["category_name"]];
         $post = $db->query($sql, $params)->fetch();
-        header("Location: /"); 
+        header("Location: /categories"); 
         exit();
     }
 }
