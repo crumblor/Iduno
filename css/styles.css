@@ -1,33 +1,90 @@
-body {
+:root {
+    --background: #000000;
+    --primary: #ff69b4;
+}
+
+/* Basics */
+
+body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
+}
+
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: left;
+
     color: #ff6bcb;
     background-color: black;
-    height: 100%;
+
     font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
 }
 
-html {
-    height: 100%;
-}   
-
-li {
-    transition: color 0.2s ease, transform 0.2s ease;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-li:hover {
-    color: #ffd700;
-    transform: scale(1.01);
+/* Navbar */
+
+header nav ul {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    padding-left: 10px;
+    margin: 0;
+
+    border-bottom: white 2px solid;
+    color: lightskyblue;
+
+    list-style-type: none;
 }
+
+header ul li {
+    padding: 7px 15px;
+}
+
+.highlight {
+    font-weight: 700;
+}
+
+/* Title */
 
 h1 {
     color: lightgreen;
 }
+
+/* Search/input box */
+
+input, select {
+    background: none;
+    color: white;
+
+    border: none;
+    border-bottom: 2px rgba(52, 52, 52, 0.812) solid;
+
+    width: 200px;
+}
+
+select {
+    text-align: center;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: aquamarine;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Search/input svg */
 
 button {
     background: none;
@@ -35,12 +92,13 @@ button {
     transition: transform 0.1s ease-in-out;
 }
 
-button:hover {
+button:hover > svg {
     transform: scale(1.1);
+    animation: wiggle 0.8s ease-in-out infinite;
 }
 
-button:hover svg {
-    animation: wiggle 0.8s ease-in-out infinite;
+svg {
+    color: white;
 }
 
 @keyframes wiggle {
@@ -61,65 +119,28 @@ button:hover svg {
     }
 }
 
-input, select {
-    background: none;
-    border: none;
-    border-bottom: 2px rgba(52, 52, 52, 0.812) solid;
-    width: 100%;
-    color: white;
-    width: 200px;
-    transition: border-color 0.05s ease-in-out, font-weight ease-in-out;
+/* Categorie */
+
+#categorie {
+    margin-top: 0;
 }
 
-select {
-    width: auto;
-    text-align: center;
+/* List */
+
+li {
+    transition: color 0.2s ease;
 }
 
-input:focus, select:focus {
-    outline: none;
-    border-color: aquamarine;
+li:hover {
+    text-decoration: underline;
+    transform: scale(1.01);
 }
 
-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body > ul {
+    padding-left: 0px;
 }
 
-ul {
-    padding-left: 10px;
-}
-
-header {
-    border-bottom: white 2px solid;
-    width: 100%;
-    background-color: black;
-}
-header ul {
-    margin: 0;
-    display: flex;
-    gap: 20px;
-    list-style-type: none;
-}
-
-header ul li {
-    padding: 7px 15px;
-}
-
-.nav {
-    text-decoration: none;
-    color: lightskyblue;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-svg {
-    color: white;
-}
+/* Show buttons */
 
 .show-buttons {
     display: flex;
@@ -128,14 +149,18 @@ svg {
 }
 
 .show-buttons a, .show-buttons button {
-    display: flex;
+    display: inherit;
     justify-content: center;
     align-items: center;
+
     background-color: black;
+    color: var(--primary);
+
+
     font-size: 20px;
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
-    color: hotpink;
+
     padding: 5px 10px;
     transition: transform 0.1s ease-in-out;
     border: 2px lightblue solid;
@@ -149,6 +174,8 @@ svg {
 .show-buttons a:hover svg, .show-buttons button:hover svg {
     animation: wiggle 0.8s ease-in-out infinite;
 }
+
+/* Notification */
 
 #notif {
     display: block;
@@ -207,8 +234,4 @@ svg {
       width: 0px;
       opacity: 0;
     }
-  }
-
-#categorie {
-    margin-top: 0;
 }

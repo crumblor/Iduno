@@ -1,10 +1,14 @@
 <header>
     <nav>
         <ul>
-            <li><a id="allnav" class="nav" href="/">Visi Blogi</a></li>
-            <li><a id="createnav" class="nav" href="/create" >Izveidot Post</a></li>
-            <li><a id="cat" class="nav" href="/categories" >Kategorijas</a></li>
-            <li><a id="createcat" class="nav" href="/categories/create" >Izveidot Kategoriju</a></li>
+            <li class='<?= ($_SERVER["REQUEST_URI"] == "/") ? "highlight" : ""?>'>
+            <a class="nav" href="/" >Kategorijas</a></li>
+            <li class='<?= ($_SERVER["REQUEST_URI"] == "/create") ? "highlight" : ""?>'>
+            <a class="nav" href="/create" >Izveidot Postu</a></li>
+            <li class='<?= ($_SERVER["REQUEST_URI"] == "/categories") ? "highlight" : ""?>'>
+            <a class="nav" href="/categories" >Kategorijas</a></li>
+            <li class='<?= ($_SERVER["REQUEST_URI"] == "/categories/create") ? "highlight" : ""?>'>
+            <a class="nav" href="/categories/create" >Izveidot Kategoriju</a></li>
         </ul>
     </nav>
 </header>
