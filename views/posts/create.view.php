@@ -5,7 +5,7 @@
 <h1>Izveidot bloga ierakstu!</h1>
 
 <form method="POST">
-    <input name="content" placeholder="Whats up?" value="<?= $_POST['content'] ?? ""?>"/>
+    <input name="content" placeholder="Ko teiksi?" value="<?= $_POST['content'] ?? ""?>"/>
         <select name="category_id">
             <option value="">Bez kategorijas</option>
             <?php foreach($categories as $categorie) { ?>

@@ -1,6 +1,7 @@
 :root {
     --background: #000000;
     --primary: #ff69b4;
+    --title: #90ee90;
 }
 
 /* Basics */
@@ -16,8 +17,8 @@ body {
     flex-direction: column;
     align-items: center;
 
-    color: #ff6bcb;
-    background-color: black;
+    color: var(--primary);
+    background-color: var(--background);
 
     font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
@@ -30,6 +31,10 @@ a {
 
 /* Navbar */
 
+header {
+    width: 100%;
+}
+
 header nav ul {
     display: flex;
     gap: 20px;
@@ -37,10 +42,12 @@ header nav ul {
     padding-left: 10px;
     margin: 0;
 
-    border-bottom: white 2px solid;
+    border-bottom: #2a2a2a 2px solid;
+    box-shadow: 0px 2px 7px #2a2a2a ;
     color: lightskyblue;
 
     list-style-type: none;
+    font-size: 20px;
 }
 
 header ul li {
@@ -54,7 +61,9 @@ header ul li {
 /* Title */
 
 h1 {
-    color: lightgreen;
+    color: var(--title);
+    font-size: 70px;
+    text-align: center;
 }
 
 /* Search/input box */
@@ -62,20 +71,23 @@ h1 {
 input, select {
     background: none;
     color: white;
+    font-size: 17px;
 
     border: none;
-    border-bottom: 2px rgba(52, 52, 52, 0.812) solid;
+    border-bottom: 2px #343434cf solid;
 
     width: 200px;
+    height: 20px;
 }
 
 select {
     text-align: center;
+    height: 24px;
 }
 
 input:focus, select:focus {
     outline: none;
-    border-color: aquamarine;
+    border-color: #7fffd4;
 }
 
 form {
@@ -92,13 +104,17 @@ button {
     transition: transform 0.1s ease-in-out;
 }
 
+button:hover {
+    transform: scale(1.05);
+}
+
 button:hover > svg {
-    transform: scale(1.1);
     animation: wiggle 0.8s ease-in-out infinite;
 }
 
+
 svg {
-    color: white;
+    color: #ffffff;
 }
 
 @keyframes wiggle {
@@ -127,10 +143,6 @@ svg {
 
 /* List */
 
-li {
-    transition: color 0.2s ease;
-}
-
 li:hover {
     text-decoration: underline;
     transform: scale(1.01);
@@ -141,7 +153,7 @@ body > ul {
 }
 
 /* Show buttons */
-
+/* TEKSTS KUSTAS LOTI DIVAINI */
 .show-buttons {
     display: flex;
     justify-content: center;
@@ -149,26 +161,24 @@ body > ul {
 }
 
 .show-buttons a, .show-buttons button {
-    display: inherit;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
 
-    background-color: black;
+    background-color: var(--background);
     color: var(--primary);
 
-
     font-size: 20px;
-    text-align: center;
     font-family: 'Courier New', Courier, monospace;
 
     padding: 5px 10px;
     transition: transform 0.1s ease-in-out;
-    border: 2px lightblue solid;
+    border: 2px lightblue solid; 
     border-radius: 3px;
 }
 
 .show-buttons a:hover, .show-buttons button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .show-buttons a:hover svg, .show-buttons button:hover svg {
@@ -227,7 +237,7 @@ body > ul {
       opacity: 0;
     }
     20%, 80% {
-      width: 22%;
+      width: 330px;
       opacity: 1;
     }
     100% {
