@@ -1,7 +1,45 @@
 :root {
-    --background: #000000;
-    --primary: #ff69b4;
-    --title: #90ee90;
+    --background-color: #000000;
+    --primary-color: #ffffff;
+    --icon-color: #ffffff;
+}
+
+.dark-mode {
+    --background-color: #000000;
+    --primary-color: #ff69b4;
+
+    --title-color: #90ee90;
+    --navbar-color: #87cefa;
+
+    --border-color: #2a2a2a;
+
+    --icon-color: #ffffff;
+    --input-color: #ffffff;
+    --input-border: #343434cf;
+    --input-border-active: #7fffd4;
+
+    --button-background: #000000;
+
+    --notif-background: #121212;
+}
+
+.light-mode {
+    --background-color: #e8e8e8;
+    --primary-color: #f00078;
+
+    --title-color: #00d400;
+    --navbar-color: #0089df;
+
+    --border-color: #bbbbbb;
+
+    --icon-color: #000000;
+    --input-color: #000000;
+    --input-border: #343434cf;
+    --input-border-active: #00ffaa;
+
+    --button-background: #ffffff;
+
+    --notif-background: #4d4d4d;
 }
 
 /* Basics */
@@ -17,9 +55,9 @@ body {
     flex-direction: column;
     align-items: center;
 
-    color: var(--primary);
-    background-color: var(--background);
-
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    
     font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -42,10 +80,10 @@ header nav ul {
     padding-left: 10px;
     margin: 0;
 
-    border-bottom: #2a2a2a 2px solid;
-    box-shadow: 0px 2px 7px #2a2a2a ;
-    color: lightskyblue;
-
+    border-bottom: var(--border-color) 1px solid;
+    box-shadow: 0px 3px 10px var(--border-color) ;
+    color: var(--navbar-color);
+    
     list-style-type: none;
     font-size: 20px;
 }
@@ -58,10 +96,27 @@ header ul li {
     font-weight: 700;
 }
 
+/* Dark/light mode button */
+
+#theme-select {
+    display: flex;
+    position: fixed;
+    top: 58px;
+    right: 15px;
+}
+
+.light-mode > #theme-select > svg:last-child {
+    display: none;
+}
+
+.dark-mode > #theme-select > svg:first-child {
+    display: none;
+}
+
 /* Title */
 
 h1 {
-    color: var(--title);
+    color: var(--title-color);
     font-size: 70px;
     text-align: center;
 }
@@ -70,11 +125,11 @@ h1 {
 
 input, select {
     background: none;
-    color: white;
+    color: var(--input-color);
     font-size: 17px;
 
     border: none;
-    border-bottom: 2px #343434cf solid;
+    border-bottom: 2px var(--input-border) solid;
 
     width: 200px;
     height: 20px;
@@ -87,7 +142,7 @@ select {
 
 input:focus, select:focus {
     outline: none;
-    border-color: #7fffd4;
+    border-color: var(--input-border-active);
 }
 
 form {
@@ -114,7 +169,7 @@ button:hover > svg {
 
 
 svg {
-    color: #ffffff;
+    color: var(--icon-color);
 }
 
 @keyframes wiggle {
@@ -153,7 +208,7 @@ body > ul {
 }
 
 /* Show buttons */
-/* TEKSTS KUSTAS LOTI DIVAINI */
+
 .show-buttons {
     display: flex;
     justify-content: center;
@@ -161,17 +216,17 @@ body > ul {
 }
 
 .show-buttons a, .show-buttons button {
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: var(--background);
+    background-color: var(--button-background);
     color: var(--primary);
 
     font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
 
-    padding: 5px 10px;
+    padding: 8px 15px;
     transition: transform 0.1s ease-in-out;
     border: 2px lightblue solid; 
     border-radius: 3px;
@@ -200,7 +255,7 @@ body > ul {
     top: 6%;
     padding: 12px 30px;
     overflow: hidden;
-    background-color: #121212;
+    background-color: var(--notif-background);
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     text-wrap: nowrap;
@@ -214,20 +269,20 @@ body > ul {
 }
 
 #error {
-    color: rgb(255, 139, 139);
-    border: solid rgba(255, 152, 152, 0.591) 4px;
+    color: #ff8b8b;
+    border: solid #ff989897 4px;
     border-right: none;
 }
 
 #success {
-    color: rgb(139, 255, 139);
-    border: solid rgba(173, 255, 182, 0.591) 4px;
+    color: #8bff8b;
+    border: solid #adffb697 4px;
     border-right: none;
 }
 
 #warning {
-    color: rgb(253, 255, 139);
-    border: solid rgba(252, 255, 173, 0.591) 4px;
+    color: #fdff8b;
+    border: solid #fcffad97 4px;
     border-right: none;
 }
 

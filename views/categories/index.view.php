@@ -1,4 +1,3 @@
-<?php $style = "css/cat.css";?>
 <?php $title = "Kategorijas";?>
 <?php require "views/components/header.php";?>
 <?php require "views/components/navbar.php";?>
