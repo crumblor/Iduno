@@ -2,7 +2,7 @@
     <nav>
         <ul>
             <li class='<?= ($_SERVER["REQUEST_URI"] == "/") ? "highlight" : ""?>'>
-            <a class="nav" href="/" >Kategorijas</a></li>
+            <a class="nav" href="/" >Blogs</a></li>
             <li class='<?= ($_SERVER["REQUEST_URI"] == "/create") ? "highlight" : ""?>'>
             <a class="nav" href="/create" >Izveidot Postu</a></li>
             <li class='<?= ($_SERVER["REQUEST_URI"] == "/categories") ? "highlight" : ""?>'>

@@ -223,6 +223,36 @@ body > ul {
     padding-left: 0px;
 }
 
+/* Actions */
+
+.show-actions {
+    display: inline-flex;
+    gap: 40px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 240px;
+}
+
+.inputs > input {
+    padding: 2px 6px;
+    width: 100%;
+}
+
+.comment {
+    margin-left: 18px;
+}
+
+.show-actions > div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 /* Show buttons */
 
 .show-buttons {
