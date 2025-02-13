@@ -14,4 +14,9 @@ return [
     "/categories/create" => "controllers/categories/create.php",
     "/categories/edit" => "controllers/categories/edit.php",
     "/categories/delete" => "controllers/categories/delete.php",
+
+    "/comments/show" => "controllers/comments/show.php",
+    "/comments/create" => "controllers/comments/create.php",
+    "/comments/edit" => "controllers/comments/edit.php",
+    "/comments/delete" => "controllers/comments/delete.php",
 ];

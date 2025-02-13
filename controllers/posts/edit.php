@@ -16,6 +16,7 @@ if(isset($_GET["id"])) {
 }
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $category_id = ($_POST["category_id"] === "") ? null : $_POST["category_id"];
     $errors = [];
     if(!Validator::string($_POST["content"], max: 50)) {
         $_SESSION["flash"] = "Ieraksts nederigs!";
@@ -26,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = 'UPDATE posts
         SET content = :content, category_id = :category_id
         WHERE id = :id';
-        $params = ["content" => $_POST["content"], "id" => $_POST["id"], "category_id" => $_POST["category_id"]];
+        $params = ["content" => $_POST["content"], "id" => $_POST["id"], "category_id" => $category_id];
         $post = $db->query($sql, $params)->fetch();
         $_SESSION["flash"] = "Ieraksts editots!";
         header('Location: /show?id=' . $_POST["id"]); 

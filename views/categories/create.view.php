@@ -1,4 +1,4 @@
-<?php $title = "Create";?>
+<?php $title = "Create Category";?>
 <?php require "views/components/header.php";?>
 <?php require "views/components/navbar.php";?>
 <h1>Izveidot jaunu kategoriju!</h1>

@@ -225,25 +225,31 @@ body > ul {
 
 /* Actions */
 
+.action-form {
+    justify-content: end;
+    align-items: end;
+    gap: 20px;
+}
+
 .show-actions {
     display: inline-flex;
-    gap: 40px;
+    justify-content: end;
+    align-items: end;
+    gap: 20px;
 }
 
 .inputs {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     width: 240px;
 }
 
 .inputs > input {
     padding: 2px 6px;
     width: 100%;
-}
-
-.comment {
-    margin-left: 18px;
 }
 
 .show-actions > div:nth-child(1) {
@@ -276,6 +282,8 @@ body > ul {
     transition: transform 0.1s ease-in-out;
     border: 2px lightblue solid; 
     border-radius: 3px;
+    height: max-content;
+    width: max-content;
 }
 
 .show-buttons a:hover, .show-buttons button:hover {
@@ -345,4 +353,45 @@ body > ul {
       width: 0px;
       opacity: 0;
     }
+}
+
+/* Comments */
+
+.comments {
+    height: 100%;
+    width: 80%;
+    margin: 20px 0;
+    display: grid;
+    gap: 15px;
+    grid-template: max-content / 50% 50%;
+}
+
+.comment {
+    display: flex;
+    gap: 10px;
+    padding: 6px 6px;
+    border: var(--navbar-color) solid 2px;
+    border-radius: 10px;
+    width: 95%;
+    justify-content: space-between;
+}
+
+.comment .show-buttons{
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment-stuff {
+    width: 100%;
+}
+
+.name-time {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+
+.comment-body {
+    padding-left: 25px;
+    display: inline-block;
 }
