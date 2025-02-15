@@ -1,14 +1,11 @@
 <?php  
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $sql = 'DELETE FROM categories
-    WHERE id = :id;
-    UPDATE posts
-    SET category_id = NULL
-    WHERE category_id = :category_id;';
-    $params = ["id" => $_POST["id"], "category_id" => $_POST["id"]];
+    $sql = 'DELETE FROM comments
+    WHERE id = :id;';
+    $params = ["id" => $_POST["id"]];
     $post = $db->query($sql, $params)->fetch();
-    header('Location: /categories'); 
+    header("Location: /show?id=" . $_POST['post_id']);
     exit();
 } else {
     redirectIfNotFound();

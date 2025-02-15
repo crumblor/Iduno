@@ -2,29 +2,37 @@
 
 require "Validator.php";
 
-if(isset($_GET["id"])) {
-    $sql = "SELECT * FROM categories WHERE id = :id";
-    $params = ["id" => $_GET["id"]];
-    $post = $db->query($sql, $params)->fetch();
-}
-
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = [];
-    if(!Validator::string($_POST["category_name"], max: 50)) {
-        $errors["category_name"] = "Saturam jābūt ievadītam, bet ne garākam par 50 rakstzīmēm";
+    if(!Validator::string($_POST["comment"], max: 255)) {
+        $errors["comment"] = "Saturam jābūt ievadītam, bet ne garākam par 50 rakstzīmēm";
     }
 
     if(empty($errors)) {
-        $sql = 'UPDATE categories
-        SET category_name = :category_name
-        WHERE id = :id';
-        $params = ["category_name" => $_POST["category_name"], "id" => $_POST["id"]];
+        $sql = 'UPDATE comments
+        SET comment = :comment
+        WHERE id = :comment_id';
+        $params = ["comment" => $_POST["comment"], "comment_id" => $_POST["comment_id"]];
         $post = $db->query($sql, $params)->fetch();
-        header('Location: show?id=' . $_POST["id"]); 
+        header('Location: /show?id=' . $_POST["post_id"]); 
         exit();
     }
 }
-if(!empty($post)) {
-    require "views/categories/edit.view.php";
-}
+
+$sql = "SELECT posts.*, categories.category_name FROM posts
+        LEFT JOIN categories
+        ON posts.category_id = categories.id
+        WHERE posts.id = :id;";
+$params = ["id" => $_GET["id"]];
+$post = $db->query($sql, $params)->fetch();
+
+$sql = "SELECT id, name, comment, date 
+        FROM comments 
+        WHERE post_id = :post_id";
+$params = ["post_id" => $_GET["id"]];
+$comments = $db->query($sql, $params)->fetchAll();
+
+$comen = count($comments);
+
+require "views/comments/edit.view.php";
 ?>
