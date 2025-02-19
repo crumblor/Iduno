@@ -67,6 +67,7 @@ body, html {
 }
 
 body {
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,6 +83,11 @@ body {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+svg {
+    height: 30px;
+    width: 30px;
 }
 
 /* Navbar */
@@ -108,19 +114,63 @@ header nav ul {
 
 header ul li {
     padding: 7px 15px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+header ul {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+ul > hr {
+    width: 100%;
+    padding: 0;
 }
 
 .highlight {
     font-weight: 700;
 }
 
+.hamburg {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+}
+
+.hamburg:hover svg {
+    animation: wiggle 0.8s ease-in-out infinite;
+}
+
+.hamburg input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul {
+    flex-direction: row;
+}
+
+header:has(input[type="checkbox"]:checked) #hamburger-menu-option {
+    display: block;
+}
+
+header:has(input[type="checkbox"]) #hamburger-menu-option {
+    display: none;
+}
+
 /* Dark/light mode button */
 
 #theme-select {
     display: flex;
-    position: fixed;
-    top: 58px;
-    right: 15px;
+    position: absolute;
+    top: 2px;
+    right: 55px;
 }
 
 .light-mode > #theme-select > svg:last-child {
@@ -221,10 +271,6 @@ li:hover {
     transform: scale(1.01);
 }
 
-body > ul {
-    padding-left: 0px;
-}
-
 /* Actions */
 
 .action-form {
@@ -319,6 +365,7 @@ body > ul {
     align-items: center;
 }
 
+
 .flash svg {
     color: inherit;
     padding-left: 2%;
@@ -348,7 +395,7 @@ body > ul {
       opacity: 0;
     }
     20%, 80% {
-      width: 330px;
+      width: 400px;
       opacity: 1;
     }
     100% {
@@ -363,8 +410,10 @@ body > ul {
     height: 100%;
     width: 80%;
     margin: 20px 0;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 15px;
+    padding-bottom: 20px;
 }
 
 .comment {
@@ -384,22 +433,24 @@ body > ul {
 
 .comment-stuff {
     width: 100%;
-    height: 70%;
+    height: 100%;
     max-width: 100%;
     max-height: 100%;
 }
 
 .name-time {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-around;
     font-size: 20px;
-    gap: 20px;
+    width: 100%;
 }
 
 .comment-body {
     box-sizing: border-box;
     display: inline-block;
     word-break: break-word;
+    width: 100%;
 }
 
 .comment-body p {
@@ -416,9 +467,8 @@ h2 {
 }
 
 #create-comment {
-    height: auto;
     min-height: 126px;
-    max-height: 200px;
+    max-height: 350px;
 }
 
 .action-form {
@@ -437,6 +487,7 @@ textarea {
     height: 100%;
     resize: none;
     font-size: 20px;
+    box-sizing: border-box;
 }
 
 textarea:focus {
@@ -444,7 +495,7 @@ textarea:focus {
     border: 2px solid var(--input-border-active);
 }
 
-.comment-stuff div:nth-child(2) {
+.comment-stuff {
     max-width: 100%;
     max-height: 100%;
     width: 100%;
@@ -461,4 +512,108 @@ textarea:focus {
 
 #name {
     width: 100%;
+}
+
+#create-comment {
+    height: 100%;
+}
+
+.comment-stuff div:nth-child(2) {
+    height: 80%;
+}
+
+
+/* MOBILE LAYOUT */
+
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header:has(input[type="checkbox"]:checked) #hamburger-menu-option {
+        display: none;
+    }
+    
+    header:has(input[type="checkbox"]) #hamburger-menu-option {
+        display: block;
+    }
+
+    body:has(input[type="checkbox"]:checked) #theme-select {
+        display: flex;
+    }
+
+    #theme-select {
+        display: none;
+    }
+
+    body {
+        font-size: 20px;
+    }
+
+    .name-time {
+        font-size: 16px;
+    }
+
+    .comment .show-buttons{
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .comment, .action-form {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    textarea {
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    #create-post {
+        display: flex;
+        flex-direction: column;
+    }
+
+    svg {
+        height: 16px;
+        width: 16px;
+    }
+
+    #theme-select svg, .hamburg svg, #special {
+        width: 30px;
+        height: 30px;
+    }
+
+    .show-buttons a, .show-buttons button {
+        font-size: 14px;
+    }
+
+    @keyframes slide {
+        0% {
+          width: 0px;
+          opacity: 0;
+        }
+        20%, 80% {
+          width: 400px;
+          opacity: 1;
+        }
+        100% {
+          width: 0px;
+          opacity: 0;
+        }
+    }
+
+    .flash {
+        padding: 6px 15px;
+        font-size: 16px;
+        max-width: max-content;
+    }
+
+    .flash svg {
+        height: 20px;
+        width: 20px;
+    }
 }
