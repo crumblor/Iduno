@@ -4,9 +4,9 @@ return [
     "database" => [
     "host" => "localhost",
     "port" => "3306",
-    "user" => "root",
-    "password" => "root",
-    "dbname" => "blog_ipb23",
+    "user" => "jekabsar_roberts",
+    "password" => "Parole123Aa",
+    "dbname" => "jekabsar_epic_roberts",
     "charset" => "utf8mb4",
-    ],
+	],
 ];
